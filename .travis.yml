@@ -19,5 +19,5 @@ deploy:
     branch: master #hena b2ol e3ml deploy
   access_key_id: $AWS_ACCESS_KEY #el variable dh mwgod 3 travis
   secret_access_key:
-    secure: $AWS_SECRET_KEY #el variable dh mwgod 3 travis
+    secure: "$AWS_SECRET_KEY" #el variable dh mwgod 3 travis
   
