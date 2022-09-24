@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run -e CI=true fawzy/docker-react npm run test -- --coverage 
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1" #bngeb el name dh mn el url bta3 el AWS
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-886266348513" #bngebo mn el  s3 bucket hnro7 nl2yha mtcreata
+  bucket_path: "docker-react" #el bucket path bn5lyha zy el app_name
+  on:
+    branch: master #hena b2ol e3ml deploy
+  access_key_id: $AWS_ACCESS_KEY #el variable dh mwgod 3 travis
+  secret_access_key:
+    secure: $AWS_SECRET_KEY #el variable dh mwgod 3 travis
+  
